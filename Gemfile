@@ -5,6 +5,9 @@ ruby '2.2.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 
+# Use bootstrap
+gem 'bootstrap-sass'
+
 # Use sqlite3 as the database for dev & test
 gem 'sqlite3', group: [:development, :test]
 
