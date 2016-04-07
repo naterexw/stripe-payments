@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Stripe Payments</title>
+    <title>Growth Hacking</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -12,8 +12,15 @@
   </head>
 
   <body>
+    <div id="content" class="container">
+      <header id="content-header">
+        <div id="price-container">
+          <span class="glyphicon glyphicon-tag"></span><span class="price">$4.99</span>
+        </div>
+        <%= image_tag('header-image.jpg', id: 'content-header-img', alt: 'Learn Growth Hacking') %>
+      </header>
 
-    <%= yield %>
-
+      <%= yield %>
+    </div>
   </body>
 </html>
