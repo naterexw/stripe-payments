@@ -36,7 +36,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Stripe gem for payments
-gem 'stripe', git: 'https://github.com/stripe/stripe-ruby'
+gem 'stripe'
+
+# Use to protect environment variables
+gem 'figaro'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
