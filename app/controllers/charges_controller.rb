@@ -4,26 +4,27 @@ class ChargesController < ApplicationController
   end
 
   def create
-    product = Product.find_by_sku("GrowthHacking1")
+    product = Product.find_by_sku("GrowthHacking2")
     # Amount in cents
     customer = Stripe::Customer.create(
-      :email => params[:stripeEmail],
-      :source  => params[:stripeToken]
+      :email  => params[:stripeEmail],
+      :source => params[:stripeToken],
+      :plan   => "GrowthHacking2"
     )
 
-    charge = Stripe::Charge.create(
-      :customer    => customer.id,
-      :amount      => product.price_in_cents,
-      :description => product.full_description,
-      :currency    => 'usd'
-    )
+    # charge = Stripe::Charge.create(
+    #   :customer    => customer.id,
+    #   :amount      => product.price_in_cents,
+    #   :description => product.full_description,
+    #   :currency    => 'usd'
+    # )
 
     purchase = Purchase.create(
       email: params[:stripeEmail],
       card: params[:stripeToken],
-      amount: charge.amount,
-      description: charge.description,
-      currency: charge.currency,
+      amount: product.price_in_cents,
+      description: product.full_description,
+      currency: "usd",
       customer_id: customer.id,
       product_id: product.id,
       uuid: SecureRandom.uuid
