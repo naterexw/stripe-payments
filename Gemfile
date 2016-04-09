@@ -44,6 +44,12 @@ gem 'figaro'
 # Add letter opener for handling emails in development
 gem 'letter_opener', group: :development
 
+# administration framework for Ruby on Rails
+gem 'activeadmin', github: 'activeadmin'
+
+# add devise to support login for ActiveAdmin
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
